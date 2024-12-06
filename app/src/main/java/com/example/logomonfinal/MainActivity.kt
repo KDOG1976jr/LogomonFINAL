@@ -55,9 +55,22 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun LogomonFINALApp(){
-    AffirmationList(
-        affirmationList = Datasource().loadAffirmations(),
-    )
+    val layoutDirection = LocalLayoutDirection.current
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding()
+            .padding(
+                start = WindowInsets.safeDrawing.asPaddingValues()
+                    .calculateStartPadding(layoutDirection),
+                end = WindowInsets.safeDrawing.asPaddingValues()
+                    .calculateEndPadding(layoutDirection),
+            ),
+    ) {
+        AffirmationList(
+            affirmationList = Datasource().loadAffirmations(),
+        )
+    }
 }
 
 @Composable
