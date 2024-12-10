@@ -522,7 +522,7 @@
     <string name="Unfezant">Unfezant</string>
     <string name="Blitzle">Blitzle</string>
     <string name="Zebstrika">Zebstrika</string>
-    <string name="roggenrola">Roggenrola</string>
+    <string name="Roggenrola">Roggenrola</string>
     <string name="Boldore">Boldore</string>
     <string name="Gigalith">Gigalith</string>
     <string name="Woobat">Woobat</string>
@@ -562,7 +562,7 @@
     <string name="Sigilyph">Sigilyph</string>
     <string name="Yamask">Yamask</string>
     <string name="Cofagrigus">Cofagrigus</string>
-    <string name="tirtouga">Tirtouga</string>
+    <string name="Tirtouga">Tirtouga</string>
     <string name="Carracosta">Carracosta</string>
     <string name="Archen">Archen</string>
     <string name="Archeops">Archeops</string>
@@ -748,6 +748,7 @@
     <string name="Mareanie">Mareanie</string>
     <string name="Toxapex">Toxapex</string>
     <string name="Mudbray">Mudbray</string>
+    <string name="Mudsdale">Mudsdale</string>
     <string name="Dewpider">Dewpider</string>
     <string name="Araquanid">Araquanid</string>
     <string name="Fomantis">Fomantis</string>
