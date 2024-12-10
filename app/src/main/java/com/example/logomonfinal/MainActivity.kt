@@ -28,10 +28,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.LocalLayoutDirection
 import com.example.logomonfinal.data.Datasource
 
@@ -61,9 +63,11 @@ fun LogomonFINALApp(){
             .fillMaxSize()
             .statusBarsPadding()
             .padding(
-                start = WindowInsets.safeDrawing.asPaddingValues()
+                start = WindowInsets.safeDrawing
+                    .asPaddingValues()
                     .calculateStartPadding(layoutDirection),
-                end = WindowInsets.safeDrawing.asPaddingValues()
+                end = WindowInsets.safeDrawing
+                    .asPaddingValues()
                     .calculateEndPadding(layoutDirection),
             ),
     ) {
@@ -88,18 +92,23 @@ fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Mod
 @Composable
 fun LogomonFINALCard(affirmation: Affirmation, modifier: Modifier = Modifier){
     Card(modifier = modifier) {
-       Column {
+       Column(
+           modifier = modifier,
+           horizontalAlignment = Alignment.CenterHorizontally
+       ) {
             Image(
                 painter = painterResource(affirmation.imageResourceId),
                 contentDescription = stringResource(affirmation.stringResourceId),
                 modifier = Modifier
                     .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
                     .height(194.dp),
                 contentScale = ContentScale.Crop
             )
            Text(
                text = LocalContext.current.getString(affirmation.stringResourceId),
-               modifier = Modifier.padding(16.dp),
+               modifier = Modifier
+                   .padding(16.dp),
                style = MaterialTheme.typography.headlineSmall
            )
        }
@@ -109,5 +118,5 @@ fun LogomonFINALCard(affirmation: Affirmation, modifier: Modifier = Modifier){
 @Preview
 @Composable
 private fun LogomonFINALCardPreview() {
-    LogomonFINALCard(Affirmation(R.string.Pansear, R.drawable._513))
+    LogomonFINALApp()
 }
